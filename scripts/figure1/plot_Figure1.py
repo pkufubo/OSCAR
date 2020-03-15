@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings("ignore")
 dty=np.float32
-'''
+
 execfile('OSCAR.py')
 data=[]
 for filename in os.listdir('./results_ideal/'):   
@@ -24,7 +24,7 @@ for filename in os.listdir('./results_ideal/'):
     data.append(data_tmp)
 data=np.array(data)
 N=int(data.shape[0])
-'''
+
 plt.figure(figsize=(10,19))
 color_list={'FF-CO2':'#FF0000','LUC-CO2':'#993300','GHG other':'#FF6600','O3t':'#66FF66',
     'O3s':'#FF9999','Aerosol':'#00CCFF','LUC albedo':'#006600',
