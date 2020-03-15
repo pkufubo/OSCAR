@@ -306,7 +306,7 @@ def OSCAR_lite(p=p,fT=fT,\
             # FORCE
             if force_RFs:
                 #for VAR in ['CO2','CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA','DUST','SALT']+['cloud','BCsnow','LCC']:
-                for VAR in ['CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA']+['BCsnow','LCC']:
+                for VAR in ['CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA']+['cloud','BCsnow','LCC']:
 					exec('RF_'+VAR+' = RF_'+VAR+'_force[t]')
 
             # totals
