@@ -1,7 +1,13 @@
 # NCLIM-19122723
-Code and data for the paper NCLIM-19122723
+##Introduction
+This branch provides the code and data of the paper NCLIM-19122723.
+The name of this branch is NCLIM-19122723, under the respositories.
+You can share it use: https://github.com/pkufubo/OSCAR/tree/NCLIM-19122723.
+The results in this study is run with OSCAR v2.2.
+These codes need to run under python2 environment.
+In addition, you need to download the numpy package and the scipy package, they are both very common python packages.
 
-This repositories is for the paper NCLIM-19122723,
+repositories is for the paper NCLIM-19122723,
 with title "Short-lived climate forcers have a long-term
 climate forcing through the carbon-climate feedback"
 
