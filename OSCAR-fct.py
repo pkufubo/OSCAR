@@ -37,7 +37,7 @@ def OSCAR_lite(p=p,fT=fT,\
                EHFC=EHFC,EPFC=EPFC,EODS=EODS,\
                ENOX=ENOX,ECO=ECO,EVOC=EVOC,ESO2=ESO2,ENH3=ENH3,EOC=EOC,EBC=EBC,\
                RFcon=RFcon,RFvolc=RFvolc,RFsolar=RFsolar,
-               force_CO2=False,force_GHG=False,force_halo=False,force_RF=False,force_RFs=False,force_clim=False,\
+               force_CO2=False,force_GHG=False,force_halo=False,force_RF=False,force_RFs0=False,force_RFs=False,force_clim=False,\
                var_output=['ELUC','OSNK','LSNK','D_CO2','RF','D_gst'],\
                plot=[]):
 
@@ -304,11 +304,14 @@ def OSCAR_lite(p=p,fT=fT,\
             RF_LCC = np.sum(alpha_LCC*D_AREA)
 
             # FORCE
+            if force_RFs0:
+                for VAR in ['CO2','CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA']+['BCsnow','LCC']:
+                    exec('RF_'+VAR+' = RF_'+VAR+'_force[t]')
+            # FORCE
             if force_RFs:
+                for VAR in ['CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA']+['BCsnow','LCC']:
                 #for VAR in ['CO2','CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA','DUST','SALT']+['cloud','BCsnow','LCC']:
-                for VAR in ['CH4','H2Os','N2O','halo']+['O3t','O3s','SO4','POA','BC','NO3','SOA']+['cloud','BCsnow','LCC']:
-					exec('RF_'+VAR+' = RF_'+VAR+'_force[t]')
-
+                    exec('RF_'+VAR+' = RF_'+VAR+'_force[t]')
             # totals
             RF = RF_CO2 + RF_CH4 + RF_H2Os + RF_N2O + RF_halo + RF_O3t + RF_O3s + RF_SO4 + RF_POA + RF_BC + RF_NO3 + RF_SOA + RF_DUST + RF_SALT + RF_cloud + RF_BCsnow + RF_LCC + RFcon[t] + RFvolc[t] + RFsolar[t]
             RF_warm = RF_CO2 + RF_CH4 + RF_H2Os + RF_N2O + RF_halo + RF_O3t + RF_O3s + RF_SO4 + RF_POA + RF_BC + RF_NO3 + RF_SOA + RF_DUST + RF_SALT + RF_cloud + warmeff_BCsnow*RF_BCsnow + warmeff_LCC*RF_LCC + RFcon[t] + warmeff_volc*RFvolc[t] + RFsolar[t]
