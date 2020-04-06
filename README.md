@@ -25,5 +25,5 @@ More simulations lead to reliable results.
 
 ## Contact
 If you are interested in our study, you can contact our corresponding author via e-mail (libengang@pku.edu.cn).
-Write an issue via Github is also OK.
+Write an issue on Github is also OK.
 We welcome discussions.
