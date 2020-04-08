@@ -1,6 +1,5 @@
 # NCLIM-19122723
-![markdown](https://zenodo.org/badge/247378152.svg "doi")
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3740813.svg)](https://doi.org/10.5281/zenodo.3740813)
 ## Introduction
 This branch provides the code and data of the paper NCLIM-19122723.
 The name of this branch is NCLIM-19122723, under the respositories.
