@@ -985,27 +985,28 @@ def Eq__RF_O3s(Var, Par):
 ##=======================
 
 ## PARAMETER: natural emissions of DMS
-D_Edms = OSCAR.process('D_Edms', (), lambda Var, Par: Eq__D_Edms(Var, Par), units='TgS yr-1')
+## (https://doi.org/10.5194/acp-21-1105-2021)
+D_Edms = OSCAR.process('D_Edms', ('D_Tg',), lambda Var, Par: Eq__D_Edms(Var, Par), units='TgS yr-1')
 def Eq__D_Edms(Var, Par):
-    return 0.
+    return Par.G_Edms * Var.D_Tg
 
 
 ## PARAMETER: natural emissions of biogenic VOC
-D_Ebvoc = OSCAR.process('D_Ebvoc', (), lambda Var, Par: Eq__D_Ebvoc(Var, Par), units='Tg yr-1')
+D_Ebvoc = OSCAR.process('D_Ebvoc', ('D_Tg',), lambda Var, Par: Eq__D_Ebvoc(Var, Par), units='Tg yr-1')
 def Eq__D_Ebvoc(Var, Par):
-    return 0.
+    return Par.G_Ebvoc * Var.D_Tg
 
 
 ## PARAMETER: natural emissions of mineral dust
-D_Edust = OSCAR.process('D_Edust', (), lambda Var, Par: Eq__D_Edust(Var, Par), units='Tg yr-1')
+D_Edust = OSCAR.process('D_Edust', ('D_Tg',), lambda Var, Par: Eq__D_Edust(Var, Par), units='Tg yr-1')
 def Eq__D_Edust(Var, Par):
-    return 0.
+    return Par.G_Edust * Var.D_Tg
 
 
 ## PARAMETER: natural emissions of sea salt
-D_Esalt = OSCAR.process('D_Esalt', (), lambda Var, Par: Eq__D_Esalt(Var, Par), units='Tg yr-1')
+D_Esalt = OSCAR.process('D_Esalt', ('D_Tg',), lambda Var, Par: Eq__D_Esalt(Var, Par), units='Tg yr-1')
 def Eq__D_Esalt(Var, Par):
-    return 0.
+    return Par.G_Esalt * Var.D_Tg
 
 
 ##===================
