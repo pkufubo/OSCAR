@@ -96,3 +96,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Outputs
+results/
+parameters/
