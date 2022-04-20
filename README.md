@@ -1,4 +1,43 @@
+# Codes to produce the results in the paper
+
+## Basic Information
+
+**Paper title: _Attributing the increase in atmospheric CH4 to anthropogenic emissions and climate feedback_**
+**Paper doi:**
+
+## Model discription
+
+OSCAR v3.1.2 is used in this study, which is available at https://github.com/tgasser/OSCAR/tree/v3.1.2. This is a simple climate model (compact or reduced complexity models), which can simulate carbon cycle and climate change with little computational costs.
+
+To learn more about this model, users can read the following literature. **If you just want to reproduce the model of the paper, just run the scripts.**
+
+|Title|doi|description|year|
+|-----|---|-----------|----|
+|CMIP6 simulations with the compact Earth system model OSCAR v3.1|https://doi.org/10.5194/gmd-2021-412|The latest full introduction to OSCAR|2022|
+|Historical CO2 emissions from land use and land cover change and their uncertainty|https://doi.org/10.5194/bg-17-4075-2020|OSCAR's land-use module|2020|
+|Path-dependent reductions in CO2 emission budgets caused by permafrost carbon release|https://doi.org/10.1038/s41561-018-0227-0|OSCAR's permafrost module|2018|
+|Path-dependent reductions in CO2 emission budgets caused by permafrost carbon release|https://doi.org/10.5194/gmd-10-271-2017|The first description and results of OSCAR|2017|
+
+## Scripts
+
+This part introduce the scripts to reproduce the model of the paper. All simulation scripts are provided. The plot scripts will be uploaded later, after formatting.
+
+|type|script|description|
+|----|------|-----------|
+|Initialization|[generate_init.py](./generate_init.py)|Generate driving data for the simulation (3000 Monte Carlo simulations)|
+|Run|[base_simulation.py](./base_simulation.py)|Run base simulation of $CH_4$, including history and RCP.|
+|Run|[paired_simulation.py](./paired_simulation.py)|To demonstrate the effect of climate feedbacks on atmospheric $CH_4$ concentrations.(Fig.1)|
+|Run|[sensitivity_simulation.py](./sensitivity_simulation.py)|To investigated the effect of different drivers on $CH_4$ lifetime.(Fig.2)|
+|Run|[attribution_simulation.py](./attribution_simulation.py)|To attribute the increases in $CH_4$ atmospheric concentrations to anthropogenic emission of $CH_4$, reactive species, and climate feedbacks.(Fig.3)|
+|Plot|[Fig.1.py](./Fig.1.py)|upload later|
+|Plot|Fig.2.py|upload later|
+|Plot|Fig.3.py|upload later|
+----------
+
+**_The following is the README of the OSCAR model (same as the source)_**
+
 # OSCAR
+
 A compact Earth system model.
 
 
